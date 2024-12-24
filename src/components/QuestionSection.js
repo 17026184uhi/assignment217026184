@@ -12,6 +12,7 @@ function QuestionSection() {
     const docRef = doc(db, "Questions", questionId);
     const snapshot = await getDoc(docRef);
     const questionData = snapshot.data();
+    console.log(questionData);
     const questionDetails = questionData[questionId];
     setTitle(questionDetails[questionId] / QuestionSection.title);
     setQuestionText(
@@ -19,6 +20,9 @@ function QuestionSection() {
     );
     setImageUri(
       questionDetails[questionId].questions.fullquestion.questionImage
+    );
+    setTitle(
+      questionDetails[questionId].questions.fullquestion.questionSectionTitle
     );
   }
 
@@ -28,7 +32,7 @@ function QuestionSection() {
 
   return (
     <div className="col-sm">
-      <h3 className="text-center">Question</h3>
+      <h3 className="text-center">{title}</h3>
       <div className="p-3 mb-2 bg-light">
         <div className="text-center">
           <img
