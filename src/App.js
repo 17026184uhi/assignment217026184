@@ -1,15 +1,3 @@
-// import QuestionPage from "./pages/QuestionPage";
-
-// function App() {
-//   return (
-//     <div>
-//       <QuestionPage />
-//     </div>
-//   );
-// }
-
-// export default App;
-
 import React, { useState, useEffect } from "react";
 import Login from "./components/Login";
 import QuestionPage from "./pages/QuestionPage";
