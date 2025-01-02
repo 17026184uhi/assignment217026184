@@ -14,7 +14,6 @@ function QuestionSection() {
     const questionData = snapshot.data();
     console.log(questionData);
     const questionDetails = questionData[questionId];
-    setTitle(questionDetails[questionId] / QuestionSection.title);
     setQuestionText(
       questionDetails[questionId].questions.fullquestion.question
     );
