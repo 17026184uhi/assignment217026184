@@ -18,10 +18,7 @@ function AnswerSection() {
     const questionData = snapshot.data();
     // console.log(questionData);
     const questionDetails = questionData[questionId];
-    var answer0Text = "answer 0 text";
-    var answer1Text = "answer 1 text";
-    var answer2Text = "answer 2 text";
-    var answer3Text = "answer 3 text";
+
     setTitle(
       questionDetails[questionId].questions.fullquestion.answersSectionTitle
     );
