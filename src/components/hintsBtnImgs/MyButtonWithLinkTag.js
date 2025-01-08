@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 const MyButton = ({ txt, to }) => {
   return (
     <Link to={`/${to}`}>
-      <Button className="btn btn-primary mb-1 p-2">{txt}</Button>
+      <div className="d-grid gap-2 mb-2">
+        <Button>{txt}</Button>
+      </div>
     </Link>
   );
 };
