@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Login from "./components/Login";
 import QuestionPage from "./pages/QuestionPage";
+import GenVid1 from "./pages/GenVideo1";
 import {
   Route,
   BrowserRouter as Router,
@@ -19,7 +20,7 @@ function PrivateRoute({ authenticated }) {
 }
 
 function PublicRoute({ authenticated }) {
-  return authenticated === false ? <Outlet /> : <Navigate to="QuestionPage" />;
+  return authenticated === false ? <Outlet /> : <Navigate to="/questionpage" />;
 }
 
 function App() {
@@ -39,29 +40,49 @@ function App() {
     });
   }, []); //empty dependecy array, which means it only runs once
 
+  const theRoot = Login();
+  const theGenVid1Page = GenVid1();
+  const theQuestion = QuestionPage();
+
   return (
     <div>
+      <h1>This is a simple page</h1>
       <Router>
         <Routes>
-          <Route
-            exact
-            path="/"
-            element={<PublicRoute authenticated={authenticated} />}
-          >
-            <Route exact path="/" element={<Login />} />
-          </Route>
-          <Route
-            exact
-            path="/QuestionPage"
-            element={<PrivateRoute authenticated={authenticated} />}
-          >
-            <Route exact path="/QuestionPage" element={<QuestionPage />} />
-          </Route>
-          <Route />
+          <Route path="/" element={theRoot} exact />
+          <Route path="/questionpage/*" element={theQuestion} />
+          <Route path="/genvid1" element={theGenVid1Page} />
         </Routes>
       </Router>
     </div>
   );
+
+  // return (
+  //   <div>
+  //     <Router>
+  //       <Routes>
+  //         <Route
+  //           exact
+  //           path="/"
+  //           element={<PublicRoute authenticated={authenticated} />}
+  //         >
+  //           <Route exact path="/" element={<Login />} />
+  //         </Route>
+  //         <Route
+  //           exact
+  //           path="/questionpage"
+  //           element={<PrivateRoute authenticated={authenticated} />}
+  //         ></Route>
+  //         <Route
+  //           // exact
+  //           path="/questionpage"
+  //           element={theQuestion}
+  //         ></Route>
+  //         <Route />
+  //       </Routes>
+  //     </Router>
+  //   </div>
+  // );
 }
 
 export default App;

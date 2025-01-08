@@ -3,6 +3,7 @@ import { db } from "../services/firebase.js";
 import { doc, getDoc } from "firebase/firestore";
 
 function QuestionSection() {
+  // console.log("This is the question section");
   const [title, setTitle] = useState("");
   const [questionText, setQuestionText] = useState("");
   const [imageUri, setImageUri] = useState("");
@@ -12,7 +13,7 @@ function QuestionSection() {
     const docRef = doc(db, "Questions", questionId);
     const snapshot = await getDoc(docRef);
     const questionData = snapshot.data();
-    console.log(questionData);
+    // console.log(questionData);
     const questionDetails = questionData[questionId];
     setQuestionText(
       questionDetails[questionId].questions.fullquestion.question

@@ -3,16 +3,18 @@ import HintsSection from "../components/HintsSection";
 import AnswerSection from "../components/AnswerSection";
 
 function QuestionPage() {
+  // console.log("This is the question page, it has at least been imported.");
+  const questionSection = QuestionSection();
+  const hintsSection = HintsSection();
+  const answerSection = AnswerSection();
   return (
     <div className="container">
       <h1 className="text-center">Question Page</h1>
       <div className="row">
-        <QuestionSection />
-        <HintsSection />
+        {questionSection}
+        {hintsSection}
       </div>
-      <div className="row">
-        <AnswerSection />
-      </div>
+      <div className="row">{answerSection}</div>
     </div>
   );
 }

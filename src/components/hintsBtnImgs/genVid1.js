@@ -9,7 +9,7 @@ function GenVid1Img() {
 
   console.log(mediaId);
   async function getMedia() {
-    console.log("Has reached genVid1.js, line 11");
+    console.log("Has reached genVid1.js, line 1");
     const docRef = doc(db, "HintsMedia", mediaId);
     const snapshot = await getDoc(docRef);
     const mediaData = snapshot.data();
