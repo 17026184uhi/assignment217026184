@@ -1,4 +1,4 @@
-import genVid1Img from "./hintsBtnImgs/genVid1";
+// import genVid1Img from "./hintsBtnImgs/genVid1Img.js";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { db } from "../services/firebase.js";

@@ -1,6 +1,6 @@
 import os
 
-fileNames = ["AnswerSection.js", "HintsSection.js", "Login.js", "QuestionSection.js", "QuestionPage.js", "testPage.js", "App.js", "firebase.js"]
+fileNames = ["AnswerSection.js", "HintsSection.js", "Login.js", "QuestionSection.js", "QuestionPage.js", "testPage.js", "App.js", "firebase.js", "genVid1Img.js"]
 fileNamesInvolved = ["QuestionSection.js", "QuestionPage.js", "testPage.js", 'index.tsx']
 
 def processFolder(folder: str):
@@ -33,7 +33,7 @@ def readFile(filePath: str):
             print("Couldn't open file {0}".format({filePath}))
     return lines
 
-srchStr = 'console.log'
+srchStr = 'genVid1Img'
 folderPath = r"C:\Users\richa\OneDrive\Documents\Masters\WAD\assignment217026184"
 
 print('='* 20)
